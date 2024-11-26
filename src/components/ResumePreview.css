@@ -1,0 +1,133 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+  }
+  
+  .basic-resume {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .contact p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #666;
+  }
+  
+  /* Section styling */
+  .section {
+    margin-bottom: 25px;
+  }
+  
+  .section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+    text-align: left;
+  }
+  
+  .section p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #444;
+  }
+  
+  /* Work Experience styling */
+  .work-experience p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .work-experience strong {
+    color: #333;
+  }
+  
+  /* Project styling */
+  .project p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .project strong {
+    color: #333;
+  }
+  
+  /* Theme Styling */
+  .dark-theme {
+    background-color: #333;
+    color: white;
+  }
+  
+  .dark-theme .basic-resume {
+    background-color: #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .dark-theme .header h1,
+  .dark-theme .section h2 {
+    color: #fff;
+  }
+  
+  .dark-theme .header p,
+  .dark-theme .section p,
+  .dark-theme .work-experience p {
+    color: #ddd;
+  }
+  
+  .dark-theme .contact p {
+    color: #bbb;
+  }
+  
+  .dark-theme .project p {
+    color: #ddd;
+  }
+  
+  /* Small Responsiveness: Make sure the content doesn't break on small screens */
+  @media (max-width: 600px) {
+    .basic-resume {
+      padding: 10px;
+    }
+  
+    .header h1 {
+      font-size: 28px;
+    }
+  
+    .section h2 {
+      font-size: 20px;
+    }
+  
+    .section p {
+      font-size: 14px;
+    }
+  }
+  

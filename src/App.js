@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import Form from "./components/FormComponent";
+import ResumePreview from "./components/ResumePreview";
+import ThemeSwitcher from "./components/ThemeSwitch";
+import SavePDF from "./components/SavePdf";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+const App = () => {
+  // State to manage layout visibility
+  const [showBasic, setShowBasic] = useState(true);
+  const [showStyled, setShowStyled] = useState(false);
+
+  // Function to handle saving the form and triggering layout visibility
+  const handleSave = () => {
+    setShowBasic(true);
+    setShowStyled(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <ThemeSwitcher />
+        <Routes>
+          <Route path="/" element={<Form onSave={handleSave} />} />
+          <Route
+            path="/resume-preview"
+            element={
+              <ResumePreview
+              />
+            }
+          />
+          <Route path="/save-pdf" element={<SavePDF />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
-}
+};
 
 export default App;
